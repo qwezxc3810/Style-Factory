@@ -1,20 +1,14 @@
 import React, { useState } from "react";
+import { Btn } from "../UI/Button.jsx";
 
-export const InputForm = () => {
-  const [properties, setProperties] = useState({
-    width: 100,
-    height: 100,
-    background: "#ffffff",
-    border: "1px solid",
-    padding: 10,
-  });
-
-  const [cssStack, setCssStack] = useState({
-    tailwind: true,
-    cssModule: true,
-    styledComponents: true,
-  });
-
+export const InputForm = ({
+  properties,
+  setProperties,
+  cssStack,
+  setCssStack,
+  selectedComponent,
+  setSelectedComponent,
+}) => {
   const propertiesFields = [
     { name: "Width", key: "width", type: "number", value: properties.width },
     {
@@ -41,6 +35,12 @@ export const InputForm = () => {
       key: "padding",
       type: "number",
       value: properties.padding,
+    },
+    {
+      name: "Color",
+      key: "color",
+      type: "text",
+      value: properties.color,
     },
   ];
 
@@ -110,13 +110,14 @@ export const InputForm = () => {
           </ul>
         </fieldset>
       </form>
-      <section>
-        <h2>Component Type</h2>
-        <section>
+      <section className="flex flex-col gap-5">
+        <h2 className="text-2xl mb-5">Component Type</h2>
+        <section className="flex gap-5">
           <h3 className="sr-only">Components List</h3>
-          <button className="">Button</button>
-          <button className="">Card</button>
-          <button className="">Input</button>
+          <Btn
+            selectedComponent={selectedComponent}
+            setSelectedComponent={setSelectedComponent}
+          />
         </section>
         <section>
           <h3 className="sr-only">CSS Stack</h3>
@@ -133,7 +134,7 @@ export const InputForm = () => {
                 />
                 <label
                   htmlFor={stack.key}
-                  className="ml-3 text-base font-medium text-gray-900"
+                  className="cursor-pointer ml-3 text-base font-medium text-gray-900"
                 >
                   {stack.name}
                 </label>
