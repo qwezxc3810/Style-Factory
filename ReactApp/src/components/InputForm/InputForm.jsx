@@ -20,7 +20,7 @@ export const InputForm = ({
     {
       name: "Background",
       key: "background",
-      type: "text",
+      type: "color",
       value: properties.background,
     },
     {
@@ -39,7 +39,7 @@ export const InputForm = ({
     {
       name: "Color",
       key: "color",
-      type: "text",
+      type: "color",
       value: properties.color,
     },
   ];
@@ -95,6 +95,33 @@ export const InputForm = ({
                       </option>
                     ))}
                   </select>
+                ) : field.type === "color" ? (
+                  <div className="flex items-center gap-2">
+                    <div
+                      className="w-10 h-10 rounded border border-gray-300 cursor-pointer"
+                      style={{ backgroundColor: field.value }}
+                      onClick={() =>
+                        document.getElementById(`${field.key}-picker`).click()
+                      }
+                    />
+                    <input
+                      type="color"
+                      id={`${field.key}-picker`}
+                      name={field.key}
+                      value={field.value}
+                      onChange={handlePropertyChange}
+                      className="hidden"
+                    />
+                    <input
+                      type="text"
+                      id={field.key}
+                      name={field.key}
+                      value={field.value}
+                      onChange={handlePropertyChange}
+                      className="w-24 p-2 border border-gray-300 rounded-md text-center uppercase"
+                      maxLength="7"
+                    />
+                  </div>
                 ) : (
                   <input
                     type={field.type}
