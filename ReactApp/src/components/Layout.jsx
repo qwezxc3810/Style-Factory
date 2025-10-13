@@ -22,7 +22,7 @@ const Layout = () => {
 
   return (
     <div className="flex justify-center items-center w-full min-h-screen bg-gray-100">
-      <div className="bg-white p-6 shadow-2xl rounded-xl w-full min-h-screnn flex flex-col items-center justify-start gap-10 lg:w-[1280px] lg:[720px] lg: mx-auto lg:flex-row lg:justify-between lg:items-center relative">
+      <div className="bg-white p-10 shadow-2xl rounded-xl w-full min-h-screnn flex flex-col items-center justify-start gap-10 lg:w-[1280px] lg:[720px] lg: mx-auto lg:flex-row lg:justify-between lg:items-center relative">
         <DarkModeToggle />
         <section className="w-full lg:w-1/3">
           <h2 className="sr-only">ControlBox</h2>

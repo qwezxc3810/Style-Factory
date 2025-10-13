@@ -22,7 +22,7 @@ const DarkModeToggle = () => {
   };
 
   return (
-    <div className="absolute top-1 right-4">
+    <div className="absolute top-2 right-4">
       <label className="relative inline-flex items-center cursor-pointer">
         <input
           type="checkbox"
