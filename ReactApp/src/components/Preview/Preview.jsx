@@ -104,7 +104,7 @@ export const Preview = ({ properties, cssStack, selectedComponent }) => {
   return (
     <div className="flex flex-col gap-6">
       <section className="border border-gray- rounded-lg shadow-sm bg-white overflow-hidden h-[400px] flex flex-col">
-        <div className="flex items-center justify-between border-b border-gray- bg-gray-50 flex-shrink-0">
+        <div className="flex items-center justify-between border-b border-gray  flex-shrink-0">
           <div className="flex">
             {tabs.map((tab) => (
               <button

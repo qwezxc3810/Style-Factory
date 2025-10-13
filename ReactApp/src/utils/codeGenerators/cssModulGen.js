@@ -10,5 +10,6 @@ export const generateCSSModuleCode = (type, properties) => {
   background-color: ${properties.background};
   border: ${borderValue};
   padding: ${properties.padding}px;
-  color: ${properties.color};}`;
+  color: ${properties.color};
+  }`;
 };
