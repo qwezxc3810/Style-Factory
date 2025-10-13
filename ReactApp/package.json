@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && cd dist && git init && git add -A && git commit -m 'deploy' && git push -f git@github.com:qwezxc3810/Style-Factory.git main:gh-pages && cd .."
   },
   "dependencies": {
     "react": "^19.1.1",
